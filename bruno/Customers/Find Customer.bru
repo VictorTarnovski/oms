@@ -1,0 +1,15 @@
+meta {
+  name: Find Customer
+  type: http
+  seq: 3
+}
+
+get {
+  url: {{base_url}}/customers/:id
+  body: json
+  auth: inherit
+}
+
+params:path {
+  id: 1
+}

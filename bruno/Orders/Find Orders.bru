@@ -1,0 +1,16 @@
+meta {
+  name: Find Orders
+  type: http
+  seq: 2
+}
+
+get {
+  url: {{base_url}}/orders?page=1&pageSize=30
+  body: json
+  auth: inherit
+}
+
+params:query {
+  page: 1
+  pageSize: 30
+}
