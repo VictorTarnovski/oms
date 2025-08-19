@@ -11,6 +11,7 @@ import com.victor_tarnovski.oms.dto.PageDTO;
 import com.victor_tarnovski.oms.mapper.OrderMapper;
 import com.victor_tarnovski.oms.repository.CustomerRepository;
 import com.victor_tarnovski.oms.repository.OrderRepository;
+import com.victor_tarnovski.oms.model.Customer;
 
 import jakarta.inject.Inject;
 
@@ -35,7 +36,7 @@ public class OrderService {
         var opt = customerRepository.findById(dto.customerId());
         if(opt.isEmpty()) return null;
 
-        var customer = opt.get();
+        Customer customer = opt.get();
         var model = mapper.toModel(dto, customer);
         model = orderRepository.save(model);
         return mapper.toDTO(model);
